@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Input, FormControl, FormLabel, FormErrorMessage, FormHelperText } from "@chakra-ui/react";
 import { Container, Flex } from "@chakra-ui/layout";
 
-import DynamicText from "../components/DynamicText";
+import DynamicText from "components/DynamicText";
 
 const Home = () => {
   const dynamicTextRef = useRef(null);
