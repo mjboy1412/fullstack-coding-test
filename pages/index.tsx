@@ -1,24 +1,30 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import { Input } from "@chakra-ui/react"
+import { Container, Box } from "@chakra-ui/layout";
+
 import DynamicText from "../components/DynamicText";
 
 const Home = () => {
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
   };
 
   return (
-    <div className={styles.container}>
+    <Container >
       <Head>
         <title>Coding Test</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <Box as="main" w="100%">
         <DynamicText />
-        <input onChange={onChange} />
-      </main>
-    </div>
+        <Input
+          placeholder="Type here"
+          size="sm"
+        />
+      </Box>
+    </Container>
   );
 };
 
