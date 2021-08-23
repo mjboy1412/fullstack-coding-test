@@ -10,6 +10,7 @@ import {
   FIREBASE_AUTH_DOMAIN,
   FIREBASE_MESSAGE_SENDER_ID,
   FIREBASE_APP_ID,
+  FIREBASE_PRIVATE_KEY,
 } from "config";
 
 const CLIENT_CONFIG = {
@@ -20,6 +21,7 @@ const CLIENT_CONFIG = {
   storageBucket: FIREBASE_STORAGE_BUCKET,
   messagingSenderId: FIREBASE_MESSAGE_SENDER_ID,
   appId: FIREBASE_APP_ID,
+  privateKey: FIREBASE_PRIVATE_KEY,
 };
 
 if (typeof window !== "undefined" && !firebase.apps.length) {
