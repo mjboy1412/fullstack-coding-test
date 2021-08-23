@@ -1,12 +1,14 @@
-import { ChakraProvider } from "@chakra-ui/react"
+import { ChakraProvider } from "@chakra-ui/react";
 
-import "../styles/globals.css";
+import { AuthProvider } from "HOC/AuthProvider";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <ChakraProvider>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <AuthProvider>
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </AuthProvider>
   );
 };
 
