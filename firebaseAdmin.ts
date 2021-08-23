@@ -1,12 +1,18 @@
-import firebaseAdmin from "firebase-admin";
+import * as firebaseAdmin from "firebase-admin";
+
+import { FIREBASE_PROJECT_ID, FIREBASE_PRIVATE_KEY, FIREBASE_CLIENT_EMAIL, FIREBASE_DATABASE_URL } from "config";
 
 if (!firebaseAdmin.apps.length) {
   firebaseAdmin.initializeApp({
     credential: firebaseAdmin.credential.cert({
-      privateKey: process.env.FIREBASE_ADMIN_PRIVATE_KEY,
-      clientEmail: process.env.FIREBASE_ADMIN_CLIENT_EMAIL,
-      projectId: process.env.FIREBASE_ADMIN_PROJECT_ID,
+      privateKey: FIREBASE_PRIVATE_KEY,
+      clientEmail: FIREBASE_CLIENT_EMAIL,
+      projectId: FIREBASE_PROJECT_ID,
     }),
-    databaseURL: process.env.FIREBASE_ADMIN_DATABASE_URL,
+    databaseURL: FIREBASE_DATABASE_URL,
   });
 }
+
+const auth = firebaseAdmin.auth();
+
+export { firebaseAdmin, auth };
