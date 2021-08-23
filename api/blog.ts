@@ -1,5 +1,4 @@
 import { firebaseAdmin } from "firebaseAdmin";
-import { withAuth } from "authMiddleware";
 
 type DataType = {
   id: string;
